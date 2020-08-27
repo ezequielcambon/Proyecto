@@ -48,20 +48,26 @@ function sortProducts(criteria, array){
     if (criteria === ORDER_ASC_BY_NAME)
     {
         result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
-            if ( a.name > b.name ){ return 1; }
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
+
+            if ( aCount < bCount ){ return -1; }
+            if ( aCount > bCount ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
         result = array.sort(function(a, b) {
-            if ( a.name > b.name ){ return -1; }
-            if ( a.name < b.name ){ return 1; }
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
+
+            if ( aCount > bCount ){ return -1; }
+            if ( aCount < bCount ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_BY_PROD_COUNT){
         result = array.sort(function(a, b) {
-            let aCount = parseInt(a.productCount);
-            let bCount = parseInt(b.productCount);
+            let aCount = parseInt(a.soldCount);
+            let bCount = parseInt(b.soldCount);
 
             if ( aCount > bCount ){ return -1; }
             if ( aCount < bCount ){ return 1; }
@@ -78,8 +84,8 @@ function showProductsList(){
     for(let i = 0; i < currentProductsArray.length; i++){
         let products = currentProductsArray[i];
 
-        if (((minCount == undefined) || (minCount != undefined && parseInt(products.productCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(products.productCount) <= maxCount))){
+        if (((minCount == undefined) || (minCount != undefined && parseInt(products.cost) >= minCount)) &&
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(products.cost) <= maxCount))){
 
             htmlContentToAppend += `
             <a href="products-info.html" class="list-group-item list-group-item-action">
@@ -90,9 +96,10 @@ function showProductsList(){
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ products.name +`</h4>
-                            <small class="text-muted">` + products.productCount + ` artículos</small>
+                            <small class="text-muted">` + products.soldCount + ` artículos</small>
                         </div>
                         <p class="mb-1">` + products.description + `</p>
+                        <h5 class="mb-1">` + products.currency + ` ` + products.cost +`</h5>
                     </div>
                 </div>
             </a>

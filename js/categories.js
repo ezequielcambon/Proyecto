@@ -83,7 +83,7 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-    if(sessionStorage.getItem('login') != "estalogueado"){
+    if(sessionStorage.getItem('login')  != "estalogueado"){
         alert('Debe iniciar sesión');
         document.location.href = "login.html";
       }

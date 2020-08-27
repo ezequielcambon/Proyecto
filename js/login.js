@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 
+
 let botonLogin = document.getElementById('btnlogin');
 
 botonLogin.addEventListener('click', inicioSesion);
@@ -23,6 +24,7 @@ function inicioSesion(){
 
         document.getElementById("mensaje").innerHTML ="";
         sessionStorage.setItem("login", "estalogueado");
+        sessionStorage.setItem("user", user);
         document.location.href = "index.html";
     }
 }
