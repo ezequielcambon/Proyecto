@@ -41,6 +41,11 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <a class="py-2 d-md-inline-block" href="#" role="button" id="user-a">
+        <script>
+          document.getElementById("user-a").innerHTML = sessionStorage.getItem("user");
+        </script>
+      </a>
     </div>
   </nav>
   <div class="container p-5">
