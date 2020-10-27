@@ -59,11 +59,11 @@
     <div class="row">
       <div class="list-group" id="prod-list-container">
       </div>
-  </div>
-  <div class="row">
-    <div class="list-group" id="total-container">
     </div>
-</div>
+    <div class="row">
+      <div class="list-group" id="total-container">
+      </div>
+    </div>
   </div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -73,6 +73,91 @@
       <div></div>
     </div>
   </div>
+  <div class="container p-5">
+    <div id="tipo-envio">
+    </div>
+    <form class="needs-validation" id="cart-info">
+      <h2>Dirección de envío</h2>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Calle</span>
+        </div>
+        <input type="text" required class="form-control" onBlur="validar('calle')" aria-label="Default" id="calle"
+          aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Número</span>
+        </div>
+        <input type="text" required class="form-control" aria-label="Default" id="numeroDir"
+        onBlur="validar('numeroDir')" aria-describedby="inputGroup-sizing-default">
+      </div>
+      <hr>
+      <h2>Costos</h2>
+      <div class="list-group" id="total-envio">
+        <div class="list-group" id="total-mas-envio"></div>
+      </div>
+      <div> <button type="button" id="show" data-toggle="modal" data-target="#ModalPago" class="btn btn-primary"> Método
+          de
+          pago</button></div>
+
+    </form>
+    <br>
+    <div> <button type="button" id="finalizarCompra" class="btn btn-primary"> Finalizar Compra</button></div>
+  </div>
+  <div class="modal fade" id="ModalPago" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Forma de pago</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form class="needs-validation" id="sell-info">
+          <div class="modal-body">
+            <hr>
+            <input type="radio" id="rTDC" name="RadioFDP" value="option1">
+            <label for="rTDC">Tarjeta de crédito</label>
+            <hr>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">N° de tarjeta</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Código de seg.</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Vencimiento</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <hr>
+            <input type="radio" id="rTB" name="RadioFDP" value="option2">
+            <label for="rTB">Transferencia bancaria</label>
+            <hr>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">N° de cuenta</span>
+              </div>
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+          </div>
+        </form>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
