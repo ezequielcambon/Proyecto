@@ -404,3 +404,9 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+@media(max-width: 768px){
+  .product-list{
+    margin: auto;
+  }
+}

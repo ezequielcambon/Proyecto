@@ -56,12 +56,44 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+    <div class="text-center pb-4">
+      <h1>Mi Perfil</h1>
+  </div>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputPnombre">Primer Nombre</label>
+          <input type="text" class="form-control" id="inputPnombre">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Segundo Nombre</label>
+          <input type="text" class="form-control" id="inputSnombre">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputPapellido">Primer Apellido</label>
+          <input type="text" class="form-control" id="inputPapellido">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputSapellido">Segundo Apellido</label>
+          <input type="text" class="form-control" id="inputSapellido">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail">E-mail</label>
+          <input type="email" class="form-control" id="inputEmail">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputTelefono">Teléfono de Contacto</label>
+          <input type="text" class="form-control" id="inputTelefono">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" onclick="guardarDatos()">Guardar Cambios</button>
+    </form>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">
